@@ -1,0 +1,2 @@
+400 Bad Request
+You hit an invisible block. Try again, but maybe jump better this time.

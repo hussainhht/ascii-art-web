@@ -1,0 +1,346 @@
+@font-face {
+	font-family: 'mario';
+	src: url('/Assets/super-mario-bros-nes.otf');
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background-image: url('/Assets/background.gif');
+	background-size: cover;
+	background-repeat: repeat;
+	background-position: center;
+	height: 100vh;
+	background-attachment: fixed;
+	font-family: 'mario';
+}
+
+header {
+	width: 60%;
+	margin: 0 auto;
+	margin-top: 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	height: 60px;
+	color: #fff;
+	font-size: 24px;
+}
+
+main {
+	width: 100%;
+	height: fit-content;
+	margin: 0 auto;
+	margin-top: 16px;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.header-div {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	width: auto;
+}
+
+.header-element {
+	height: 50%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: baseline;
+}
+
+.header-element-image {
+	height: 100%;
+}
+
+.header-element-text {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	color: #FFFFFF;
+	/* text-shadow: 4px 3px 0 #000000; */
+}
+
+#inputSection {
+	width: fit-content;
+	height: fit-content;
+	margin: 0 auto;
+	margin-top: 0px;
+}
+
+#inputForm {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.inputBoxContainer {
+	margin: 0 auto;
+	width: fit-content;
+	height: fit-content§;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.inputBox {
+	height: auto;
+	aspect-ratio: 2512 / 1216;
+	margin: 0 auto;
+	background-image: url('/Assets/inputbox.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#inputTextarea {
+	font-family: 'mario';
+	width: 90%;
+	height: 85%;
+	background: transparent;
+	border: none;
+	outline: none;
+	resize: none;
+	margin: auto;
+	backdrop-filter: blur(2px);
+}
+
+#outputTextarea {
+	font-family: 'mario';
+	width: 90%;
+	height: 85%;
+	background: transparent;
+	border: none;
+	outline: none;
+	resize: none;
+	margin: auto;
+	overflow-y: auto;
+	color: #000;
+	backdrop-filter: blur(2px);
+}
+
+#inputTextarea,
+#outputTextarea {
+	white-space: pre;
+	overflow-x: auto;
+	word-break: normal;
+	overflow-wrap: normal;
+}
+
+#copyright {
+	width: fit-content;
+	display: flex;
+	align-self: flex-end;
+	justify-self: flex-end;
+	color: #fec4a9;
+}
+
+.bannerContainer {
+	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	margin-top: 24px;
+}
+
+.bannerBtn:hover {
+	transform: scale(1.05);
+	transition: transform 0.2s ease-in-out;
+}
+
+.bannerHoverImg {
+	width: fit-content;
+	height: fit-content;
+	object-fit: cover;
+	object-position: center;
+	outline: none;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.banner {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 32px;
+	padding: 8px;
+}
+
+.bannerHoverImg {
+	height: 27px;
+	opacity: 0;
+}
+
+.bannerText {
+	color: #fff;
+	font-size: 24px;
+}
+
+.bannerBtn {
+	font-family: 'mario';
+	background: none;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	margin: 8px;
+	cursor: pointer;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 32px;
+	width: 100%;
+}
+
+.bannerBtn:hover .bannerHoverImg {
+	opacity: 1;
+}
+
+#outputSection {
+	width: fit-content;
+	height: fit-content;
+	margin: 0 auto;
+	margin-top: 36px;
+	padding-bottom: 128px;
+}
+
+.outputBox {
+	height: auto;
+	aspect-ratio: 2512 / 1216;
+	margin: 0 auto;
+	background-image: url('/Assets/inputbox.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.outputBoxContainer {
+	margin: 0 auto;
+	width: fit-content;
+	height: fit-content§;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.download-btn {
+	font-family: 'mario';
+	background: #ff9900;
+	color: #000;
+	border: 2px solid #000;
+	padding: 4px 12px;
+	cursor: pointer;
+}
+
+.download-btn:hover {
+	filter: brightness(1.1);
+}
+
+
+/* ERROR PAGE */
+
+#errBody {
+	overflow-y: hidden;
+}
+
+.errorContainer {
+	width: fit-content;
+	height: fit-content;
+	margin: 0 auto;
+	margin-top: 192px;
+	padding-bottom: 128px;
+	color: #fff;
+	font-size: 48px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 4vh;
+
+	opacity: 0;
+	animation: show 0s forwards;
+	animation-delay: 6.1s;
+}
+
+@keyframes show {
+	to {
+		opacity: 1;
+	}
+}
+
+.errorMsg {
+	font-size: 24px;
+	text-align: center;
+}
+
+.errorStatusCode {
+	margin-top: 64px;
+}
+
+.startOver {
+	color: #fff;
+	text-decoration: none;
+	font-size: 36px;
+	cursor: pointer;
+	border: none;
+}
+
+.startOver:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+@media (max-width: 960px) {
+	header {
+		width: 80%;
+	}
+}
+
+@media (max-width: 720px) {
+	header {
+		width: 100%;
+	}
+}
+
+@media (max-width: 560px) {
+	header {
+		width: 100%;
+	}
+
+	.header-element-text {
+		font-size: 18px;
+	}
+
+	.bannerText {
+		font-size: 20px;
+	}
+}

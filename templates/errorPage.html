@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII Art</title>
+    <link rel="stylesheet" href="/css/mario.css">
+</head>
+
+<body id="errBody">
+    <video id="bgvid" autoplay muted playsinline
+        style="position:fixed;top:0;left:0;width:100vw;height:100vh;object-fit:cover;z-index:-1;">
+        <source src="/Assets/errorBg1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <!-- <div id="audioUnlocker" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:10;cursor:pointer;background:rgba(0,0,0,0);">
+        <script>
+            document.getElementById('audioUnlocker').onclick = function() {
+                var vid = document.getElementById('bgvid');
+                vid.muted = false;
+                vid.play();
+                this.style.display = 'none';
+            };
+        </script>
+    </div> -->
+    <header>
+        <div class="header-div">
+            <div class="header-element">
+                <p class="header-element-text">ASCII ART</p>
+            </div>
+            <div class="header-element">
+                <p class="header-element-text">000000</p>
+            </div>
+        </div>
+        <div class="header-div">
+            <div class="header-element">
+            </div>
+            <div class="header-element">
+                <div class="header-element-image">
+                    <img src="/Assets/mario-coin.gif" alt="mario-coin">
+                </div>
+                <div class="header-element-text">
+                    <p>&#215;{{printf "%02d" .CoinCount}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="header-div">
+            <div class="header-element">
+                <p class="header-element-text">WORLD</p>
+            </div>
+            <div class="header-element">
+                <p class="header-element-text">1-1</p>
+            </div>
+        </div>
+        <div class="header-div">
+            <div class="header-element">
+                <p class="header-element-text">TIME</p>
+            </div>
+            <div class="header-element"></div>
+        </div>
+    </header>
+    <main>
+        <div class="errorContainer">
+            <p class="errorMsg" style="font-size: 80px;">Game Over</p>
+            <p class="errorStatusCode">{{.StatusCode}}</p>
+            <p class="errorMsg">{{.Msg}}</p>
+            <a href="/" class="startOver">Start Over</a>
+        </div>
+    </main>
+</body>
+
+</html>

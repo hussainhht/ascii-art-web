@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ASCII Art</title>
+		<link rel="stylesheet" href="/css/terminal.css">
+	</head>
+
+	<body>
+		<header>
+			<div class="header-div">
+				<div class="header-element">
+					<p class="header-element-text">ASCII ART</p>
+					<a href="http://localhost:8081">ASCII ART</a>
+				</div>
+
+			</div>
+			<div class="header-div">
+
+			</div>
+
+			<div class="header-div">
+				<div class="header-element">
+					<p class="header-element-text">TIME : {{.StartTime}}</p>
+				</div>
+				<div class="header-element">
+				</div>
+			</div>
+		</header>
+		<main>
+				<nav style="margin: 8px 16px;">
+					<form action="/" method="get" style="display:inline;">
+						<button type="submit" class="bannerBtn">← Back to Home</button>
+					</form>
+				</nav>
+			<section id="inputSection" class="section">
+				<form id="inputForm" action="/terminal/ascii-art" method="post">
+					<input type="hidden" name="style" value="terminal" />
+					<div class="inputBoxContainer">
+						<div class="inputBox">
+							<textarea name="inputText" id="inputTextarea"
+								placeholder="Start typing..." rows="6" cols="50"
+								maxlength="1000">
+{{.Input}}</textarea>
+						</div>
+						<div id="copyright">
+							<p>©2025 ASCII Art</p>
+						</div>
+					</div>
+
+					<div class="bannerContainer">
+						<button class="bannerBtn" type="submit" name="banner" value="standard">
+							<img class="bannerHoverImg" src="/Assets/goomba.png" alt>
+							<p class="bannerText">1 standard</p>
+						</button>
+						<button class="bannerBtn" type="submit" name="banner" value="shadow">
+							<img class="bannerHoverImg" src="/Assets/goomba.png" alt>
+							<p class="bannerText">2 shadow</p>
+						</button>
+						<button class="bannerBtn" type="submit" name="banner" value="thinkertoy">
+							<img class="bannerHoverImg" src="/Assets/goomba.png" alt>
+							<p class="bannerText">3 thinkertoy</p>
+						</button>
+						<button class="bannerBtn" type="submit" name="banner" value="bigmoney">
+							<img class="bannerHoverImg" src="/Assets/goomba.png" alt>
+							<p class="bannerText">4 bigmoney</p>
+						</button>
+					</div>
+				</form>
+			</section>
+			{{if .Output}}
+			<section id="outputSection" class="section">
+				<div class="outputBoxContainer">
+					<div class="outputBox">
+						<textarea name="inputText" id="outputTextarea"
+							placeholder="mario likes pizza" rows="6" cols="50"
+							maxlength="1000" disabled>
+{{.Output}}</textarea>
+					</div>
+					<form method="POST" action="/export" style="margin-top:16px;">
+						<input type="hidden" name="inputText" value="{{.Input}}" />
+						<input type="hidden" name="banner" value="{{.Banner}}" />
+						<input type="hidden" name="style" value="{{.Style}}" />
+						<button type="submit" class="download-btn bannerBtn"
+							style="text-align:center;">Download .txt</button>
+					</form>
+				</div>
+			</section>
+			{{end}}
+		</main>
+	</body>
+
+</html>

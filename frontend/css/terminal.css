@@ -1,0 +1,103 @@
+/* terminal.css */
+
+body {
+	background-color: #000000;
+	color: #33FF33;
+	font-family: 'Courier New', Courier, monospace;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+header {
+	width: 60%;
+	margin: 16px auto 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: #33FF33;
+	font-size: 18px;
+	border-bottom: 1px solid #33FF33;
+	padding-bottom: 8px;
+}
+
+main {
+	width: 60%;
+	margin: 16px auto;
+}
+
+
+textarea {
+	background-color: #000000;
+	color: #33FF33;
+	border: 1px solid #33FF33;
+	font-family: 'Courier New', monospace;
+	width: 100%;
+	height: 300px;
+	padding: 12px;
+	white-space: pre;
+	box-sizing: border-box;
+	resize: none;
+
+}
+
+.inputBox,
+.outputBox {
+	width: 100%;
+	border: 1px solid #33FF33;
+	padding: 8px;
+	margin-bottom: 20px;
+}
+
+.bannerContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.bannerBtn {
+	background-color: black;
+	color: #33FF33;
+	border: 1px solid #33FF33;
+	font-family: 'Courier New', monospace;
+	padding: 10px 20px;
+	margin: 8px 0;
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
+}
+
+.bannerBtn:hover {
+	background-color: #33FF33;
+	color: black;
+}
+
+.bannerText {
+	font-size: 18px;
+}
+
+.bannerHoverImg {
+	display: none;
+}
+
+.header-element-text p {
+	margin: 0;
+}
+
+#copyright {
+	text-align: right;
+	color: #33FF33;
+	font-size: 12px;
+}
+
+.download-btn {
+	border: 1px solid #33FF33;
+	background: #000;
+	color: #33FF33;
+	cursor: pointer;
+}
+
+.download-btn:hover {
+	background: #33FF33;
+	color: #000;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Oops! Error</title>
+    <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Courier New", monospace;
+    }
+
+    body {
+      background: radial-gradient(circle at center, #1a1a2e, #0f0f1f);
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: #ff004c;
+      text-shadow: 0 0 20px #ff004c;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+      color: #aaa;
+    }
+
+    .glow-box {
+      border: 2px dashed #ff004c;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px #ff004c, 0 0 60px #ff004c66 inset;
+      max-width: 600px;
+    }
+
+    .home-btn {
+      margin-top: 2rem;
+      text-decoration: none;
+      color: white;
+      background-color: #ff004c;
+      padding: 0.75rem 1.5rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 10px #ff004c;
+    }
+
+    .home-btn:hover {
+      background-color: #ff3366;
+      box-shadow: 0 0 20px #ff3366, 0 0 40px #ff3366;
+      transform: scale(1.05);
+    }
+
+    .ascii {
+      font-family: monospace;
+      white-space: pre;
+      color: #ff004c;
+      margin-top: 2rem;
+      line-height: 1.2;
+      text-shadow: 0 0 10px #ff004c;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="glow-box">
+      <!-- <h1>⚠ 404</h1> -->
+      <h1>{{.StatusCode}}</h1>
+      <p class="errorMsg">{{.Msg}}</p>
+      <a href="/" class="home-btn">Back to Homepage</a>
+
+      <div class="ascii">
+
+      </div>
+    </div>
+    <script>
+    const asciiArt = `
+      .-""""""-.
+     /          \\
+    |            |
+    |,  .-.  .-.  ,|
+    | )(__/  \\__)( |
+    |/     /\\     \\|
+    (_     ^^     _)
+     \\__|IIIIII|__/
+      | \`------\` |
+      \\__________/
+    `;
+    document.querySelector('.ascii').textContent = asciiArt;
+  </script>
+  </body>
+</html>

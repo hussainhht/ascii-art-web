@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title>ASCII Art</title>
+		<link rel="stylesheet" href="/css/dark.css">
+		<link rel="shortcut icon" href="/Assets/favicon.png" type="image/x-icon">
+		<meta name="viewport"
+			content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+	</head>
+
+	<body>
+		<main>
+			<nav style="margin: 8px 16px;">
+				<form action="/" method="get" style="display:inline;">
+					<button type="submit" class="bannerButton">← Back to Home</button>
+				</form>
+			</nav>
+			<header>
+				<h1>Ascii Art Generator</h1>
+			</header>
+			<div class="container">
+				<div id="inputContainer">
+					<form action="/dark/ascii-art" method="post">
+						<input type="hidden" name="style" value="dark" />
+						<label class="fieldLabel" for="inputText">Enter Text:</label>
+						<div id="inputTextareaContainer">
+							<textarea name="inputText" id="inputText" placeholder="Start typing..."
+								rows="6" cols="50"
+								maxlength="1000">{{.Input}}</textarea>
+						</div>
+
+						<div id="bannerButtons">
+							<button type="submit" name="banner" value="standard"
+								class="bannerButton">Standard</button>
+							<button type="submit" name="banner" value="shadow"
+								class="bannerButton">Shadow</button>
+							<button type="submit" name="banner" value="thinkertoy"
+								class="bannerButton">Thinkertoy</button>
+							<button type="submit" name="banner" value="bigmoney"
+								class="bannerButton">bigmoney</button>
+
+						</div>
+					</form>
+				</div>
+
+				{{if .Output}}
+				<div id="outputContainer">
+					<h2>Generated ASCII Art:</h2>
+					<pre id="asciiOutput">{{.Output}}</pre>
+					<form method="POST" action="/export" style="margin-top:1rem;">
+						<input type="hidden" name="inputText" value="{{.Input}}" />
+						<input type="hidden" name="banner" value="{{.Banner}}" />
+						<input type="hidden" name="style" value="{{.Style}}" />
+						<button type="submit" class="download-btn bannerButton">Download
+							.txt</button>
+					</form>
+				</div>
+				{{end}}
+			</div>
+
+		</main>
+	</body>
+
+</html>
