@@ -130,21 +130,6 @@ Security & Permissions:
 - A temporary server-side file is created with mode 0600 (exclusive to the process) then removed immediately after streaming (see ExportHandler in main.go).
 - Client-side file permissions are determined by the operating system and browser; the server cannot enforce them.
 
-## Audit Checklist Mapping
-
-| Requirement | Implementation |
-|-------------|----------------|
-| POST /export handler | main.go: ExportHandler |
-| Reuse ASCII generation | backend/AsciiArt.go (ASCIIArt) reused directly |
-| Input normalization CRLF→LF | ExportHandler replaces "\r" |
-| Size limit 20KB | http.MaxBytesReader in ExportHandler |
-| Headers (type/length/disposition) | ExportHandler sets all before write |
-| Temp file 0600 then removed | ExportHandler (os.CreateTemp + os.Chmod + defer os.Remove) |
-| Download button in templates | templates/index.html, normal.html, terminal.html, dark.html |
-| Error handling/logging | ExportHandler uses backend.ErrorHandler + log.Printf |
-| No external deps | Only Go stdlib imports in changes |
-| Optional zip support | ExportHandler (archive/zip path) |
-| README updated | This section |
 
 
 ## Authors 
