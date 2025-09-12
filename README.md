@@ -1,4 +1,4 @@
-# 🎨 ASCII Art Web Export
+# 🎨 ASCII Art Web 
 
 ## Description
 
@@ -155,3 +155,21 @@ Security & Permissions:
 
 
 # ascii-art-web
+
+## Preview
+
+### Home Page
+![Home Page](img/home.png)
+
+### Terminal Theme
+![Terminal Page](img/terminal.png)
+
+### Normal Theme
+![Normal Page](img/normal.png)
+
+### Dark Theme
+![Dark Page](img/dark.png)
+
+### Mario Theme
+![Mario Page](img/mario.png)
+
