@@ -53,63 +53,61 @@ Whether you like a retro 8-bit game feel or a sleek terminal vibe, this app lets
 
 ```bash
 ascii-art-web-stylize/
-│
-├── backend/
+│.
+├── Dockerfile
+├── README.md
+├── ascii-art.exe
+├── backend
 │   ├── AsciiArt.go
 │   ├── ErrorHandler.go
+│   ├── Handler.go
+│   ├── PrintLine.go
 │   └── PrintLineForbigmoney.go
-│
-├── errorMessages/
+├── errorMessages
 │   ├── 400.txt
 │   ├── 404.txt
 │   └── 500.txt
-│
-├── fonts/
+├── fonts
 │   ├── bigmoney.txt
 │   ├── shadow.txt
 │   ├── standard.txt
 │   └── thinkertoy.txt
-│
-├── frontend/
-│   ├── Assets/
-│   │   ├── Audio/
+├── frontend
+│   ├── Assets
+│   │   ├── Audio
 │   │   │   └── coinCollect.mp3
+│   │   ├── background.gif
+│   │   ├── errorBg1.mp4
+│   │   ├── favicon.png
 │   │   ├── goomba.png
 │   │   ├── inputBox.png
 │   │   ├── mario-coin.gif
-│   │   ├── favicon.png
-│   │   ├── title.png
-│   │   ├── standard.png
-│   │   ├── shadow.png
-│   │   ├── thinkertoy.png
-│   │   ├── background.gif
-│   │   ├── errorBg1.mp4
-│   │   └── super-mario-bros-nes.otf
-│   │
-│   └── css/
+│   │   ├── super-mario-bros-nes.otf
+│   │   └── unused
+│   │       ├── backgroundold.gif
+│   │       ├── errorBg1.mp4
+│   │       ├── home.png
+│   │       ├── newTitle.png
+│   │       ├── shadow.png
+│   │       ├── standard.png
+│   │       ├── thinkertoy.png
+│   │       └── title.png
+│   └── css
 │       ├── dark.css
 │       ├── home-style.css
 │       ├── mario.css
 │       ├── normal.css
 │       └── terminal.css
-│
-├── templates/
-│   ├── themes/
-│   │   ├── dark.html
-│   │   ├── mario.html
-│   │   ├── normal.html
-│   │   └── terminal.html
-│   ├── errdefault.html
-│   ├── errorPage.html
-│   └── homepage.html
-│
-├── .vscode/
-│   └── settings.json
-│
-├── Dockerfile
 ├── go.mod
 ├── main.go
-└── README.md
+└── templates
+    ├── dark.html
+    ├── errdefault.html
+    ├── errorPage.html
+    ├── homepage.html
+    ├── index.html
+    ├── normal.html
+    └── terminal.html
 ```
 
 ## Export Feature
