@@ -161,15 +161,17 @@ Security & Permissions:
 ### Home Page
 ![Home Page](img/home.png)
 
+
+### Dark Theme
+![Dark Page](img/dark.png)
+
+
+### Mario Theme
+![Mario Page](img/mario.png)
+
+
 ### Terminal Theme
 ![Terminal Page](img/terminal.png)
 
 ### Normal Theme
 ![Normal Page](img/normal.png)
-
-### Dark Theme
-![Dark Page](img/dark.png)
-
-### Mario Theme
-![Mario Page](img/mario.png)
-
