@@ -383,7 +383,7 @@ func ExportHandler(w http.ResponseWriter, r *http.Request) {
 	payload := []byte(ascii)
 
 	
-	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
+	w.Header().Set("Content-Type", "text/plain; charset=ASCII")
 	w.Header().Set("Content-Disposition", fmt.Sprintf("attachment; filename=\"%s\"", baseName))
 	w.Header().Set("Content-Length", strconv.Itoa(len(payload)))
 
