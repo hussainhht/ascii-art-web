@@ -132,7 +132,8 @@ banners, and desktop/tablet/mobile widths (1440, 768, 390), generation against G
 downloaded file contents, clipboard, validation, reload, persistence, keyboard
 submission, wide output scrolling, missing/corrupt fonts, unavailable storage,
 and runtime network/console errors. Screenshots go to ignored `test-results/`.
-CI installs Chromium and its Linux dependencies automatically.
+CI uses Chrome already installed on GitHub's Ubuntu 24.04 runner, avoiding an
+extra browser/system-package download. The browser step has a five-minute limit.
 
 ## GitHub Pages
 
