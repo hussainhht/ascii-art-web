@@ -1,0 +1,70 @@
+/* Small static-demo and responsive fixes; original theme styles load first. */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('../Assets/roboto-latin.woff2') format('woff2');
+}
+[hidden] { display: none !important; }
+*, *::before, *::after { box-sizing: border-box; }
+html, body { min-width: 0; min-height: 100%; }
+body { margin: 0; }
+main, section, .container, #inputContainer, #outputContainer { min-width: 0; }
+button:focus-visible, a:focus-visible, textarea:focus-visible, pre:focus-visible {
+  outline: 3px solid currentColor !important;
+  outline-offset: 4px;
+}
+button:disabled { opacity: .6; cursor: wait; }
+.demo-feedback { max-width: 700px; margin: 1rem auto; padding: 0 1rem; }
+.demo-error { padding: 1rem; border: 2px solid currentColor; border-radius: 8px; }
+.demo-status { min-height: 1.5em; }
+.demo-counter { font-size: .85rem; margin-top: 1rem; }
+.demo-actions { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+.demo-actions button { width: auto; margin: 0; }
+.demo-resume { display: inline-block; margin-top: 1rem; color: #00e5ff; }
+#asciiOutput, #outputTextarea {
+  white-space: pre !important;
+  font-family: 'Courier New', Courier, monospace !important;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  overflow: auto;
+  max-width: 100%;
+  tab-size: 4;
+}
+body[data-theme=normal] #bannerButtons, body[data-theme=dark] #bannerButtons { flex-wrap: wrap; }
+body[data-theme=dark] main { width: min(780px, 100%); }
+body[data-theme=dark] .container { margin: 0 auto; width: calc(100% - 32px); }
+body[data-theme=mario] { min-height: 100vh; height: auto; background-color: #5c94fc; }
+body[data-theme=mario] nav .bannerBtn { width: auto; color: white; }
+body[data-theme=mario] #inputSection, body[data-theme=mario] #outputSection { width: min(650px, calc(100% - 32px)); }
+body[data-theme=mario] .inputBoxContainer, body[data-theme=mario] .outputBoxContainer { width: 100%; }
+body[data-theme=mario] .inputBox, body[data-theme=mario] .outputBox { width: 100%; }
+body[data-theme=mario] #inputTextarea, body[data-theme=mario] #outputTextarea { padding: 12px; }
+body[data-theme=mario] .demo-feedback { color: white; font-family: 'Courier New', monospace; background: rgba(0, 0, 0, .75); padding: 12px; }
+body[data-theme=mario] .demo-error { background: #7c1c1c; }
+body[data-theme=mario] .demo-actions button { color: #fff; font-size: 14px; }
+body[data-theme=mario] header { font-size: 18px; gap: 10px; }
+body[data-theme=mario] .header-element-image { width: 20px; height: 28px; }
+body[data-theme=mario] .header-element-image img { object-fit: contain; }
+body[data-theme=mario] [data-time] { font-size: 14px; }
+body[data-theme=terminal] .inputBox, body[data-theme=terminal] .outputBox { width: 100%; }
+body[data-theme=terminal] a { color: #33ff33; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 760px) {
+  body[data-theme=normal] .container { width: calc(100% - 24px); padding: 20px; }
+  body[data-theme=terminal] main, body[data-theme=terminal] header { width: calc(100% - 32px); }
+  body[data-theme=dark] { padding-top: 16px; }
+  body[data-theme=dark] .container { padding: 20px; }
+  body[data-theme=mario] header { width: calc(100% - 24px); height: auto; min-height: 60px; flex-wrap: wrap; }
+  body[data-theme=mario] .header-element-text { font-size: 12px; }
+  body[data-theme=mario] .bannerText { font-size: 16px; }
+  body[data-theme=mario] .bannerBtn { gap: 12px; }
+  body[data-theme=mario] .inputBox, body[data-theme=mario] .outputBox { aspect-ratio: auto; height: 230px; background-size: 100% 100%; }
+  body[data-theme=mario] #inputTextarea { font-size: 14px; }
+  h1 { overflow-wrap: break-word; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}

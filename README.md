@@ -8,6 +8,17 @@ Whether you like a retro 8-bit game feel or a sleek terminal vibe, this app lets
 
 ---
 
+## Live Demo
+
+The `livedemo` branch includes a frontend-only version for GitHub Pages with the
+original four themes and banner fonts. ASCII generation and TXT downloads run
+entirely in your browser; the original Go application remains unchanged.
+
+Demo URL: [ASCII Art Web](https://hussainhht.github.io/ascii-art-web/).
+See [LIVE_DEMO.md](LIVE_DEMO.md) for deployment status verification, local setup,
+compatibility details, and tests. Build locally with `node scripts/build-demo.mjs`
+and preview with `node scripts/serve-demo.mjs`.
+
 ## Features
 
 - 🎮 Multiple Themes: Choose from Mario, Terminal, Dark, and Normal layouts.

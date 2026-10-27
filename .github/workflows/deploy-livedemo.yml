@@ -1,0 +1,60 @@
+name: Deploy frontend live demo
+
+on:
+  push:
+    branches: [livedemo]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages-livedemo
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/livedemo'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-go@v7
+        with:
+          go-version: stable
+          cache: false
+      - name: Check original Go output against captured fixtures
+        run: |
+          go test ./...
+          go run ./tests/golden
+          git diff --exit-code -- tests/golden/outputs.json
+      - name: Prepare static site
+        run: |
+          npm ci
+          npm run build
+          npm test
+      - name: Browser smoke test under repository subpath
+        run: |
+          npx playwright install --with-deps chromium
+          npm run test:browser
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    if: github.ref == 'refs/heads/livedemo'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy static artifact
+        id: deployment
+        uses: actions/deploy-pages@v5
